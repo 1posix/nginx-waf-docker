@@ -56,12 +56,19 @@ Il est conçu pour protéger les services backend (Plex, API, Sites Web) contre 
 │   │       ├── 00-geoip.conf
 │   │       ├── 01-log_enriched.conf
 │   │       └── 02-default.conf
-│   └── nginx.conf
+│   ├── nginx.conf
+│   └── owasp-crs/
+│       ├── crs-setup.conf
+│       └── rules
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .dockerignore
 ├── entrypoint.sh
+├── logs/
+│   ├── access.log
+│   └── error.log
 ├── Makefile
+├── README.md
 └── setup.sh
 ```
 ## Installation & Lancement du Projet
