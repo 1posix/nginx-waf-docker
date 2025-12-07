@@ -80,8 +80,8 @@ RUN mkdir -p /opt/modsec-artifacts && \
 # STAGE 2 - Runtime
 FROM debian:13-slim
 
-LABEL maintainer="Xor"
-LABEL description="BlackBox WAF"
+LABEL maintainer="1posix"
+LABEL description="Nginx WAF"
 
 ARG NGINX_VERSION=1.28.0
 
