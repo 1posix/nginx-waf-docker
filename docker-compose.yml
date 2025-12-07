@@ -13,6 +13,8 @@ services:
       - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
       - ./config/owasp-crs/rules:/etc/nginx/owasp-crs/rules
       - ./config/owasp-crs/crs-setup.conf:/etc/nginx/owasp-crs/crs-setup.conf
+      - ./config/custom/html:/usr/share/nginx/html/custom:ro
+      - ./config/custom/snippets/error-pages.conf:/etc/nginx/snippets/error-pages.conf:ro
       - ./logs:/var/log/nginx
     networks:
       - proxy-network
