@@ -255,14 +255,13 @@ SecRule REMOTE_ADDR "@ipMatch 203.0.113.42,192.0.2.0/24,185.220.101.0/24" \
 
 ## Star History
 
-<a href="https://www.star-history.com/#1posix/nginx-waf-docker&type=timeline&legend=top-left">
+<a href="https://www.star-history.com/#1posix/nginx-waf-docker&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=timeline&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=timeline&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=timeline&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=1posix/nginx-waf-docker&type=date&legend=top-left" />
  </picture>
 </a>
-
 
 Si ce projet vous aide à sécuriser votre infra, merci de laisser une étoile ⭐. C'est le seul carburant de l'Open Source.
 
