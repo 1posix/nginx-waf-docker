@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare runtime directories
+        run: |
+          cp .env.example .env
+          mkdir -p logs/modsecurity data/geoip certs backups
+          sudo chown -R 10001:10001 logs/modsecurity
+
+      - name: Validate Compose
+        run: docker compose config
+
+      - name: Build pinned image
+        run: docker compose build --pull waf
+
+      - name: Validate Nginx + ModSecurity + CRS
+        run: docker compose run --rm --no-deps waf nginx -t
+
+      - name: Start WAF
+        run: docker compose up -d --no-build
+
+      - name: Wait for health
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          docker compose logs waf
+          exit 1
+
+      - name: WAF smoke tests
+        run: ./tests/smoke.sh
+
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs waf

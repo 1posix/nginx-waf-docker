@@ -1,10 +1,9 @@
 .git
-.gitignore
 .github
-setup.sh
-Makefile
-docker-compose.yml
-Dockerfile
-.dockerignore
+.env
 logs
+backups
+data/geoip
+certs
 *.md
+!VERSION

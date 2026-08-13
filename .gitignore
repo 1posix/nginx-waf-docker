@@ -1,0 +1,24 @@
+.env
+*.local
+*.swp
+*.swo
+.DS_Store
+
+# Runtime data
+logs/*
+!logs/.gitkeep
+!logs/modsecurity/
+logs/modsecurity/*
+!logs/modsecurity/.gitkeep
+
+data/geoip/*
+!data/geoip/.gitkeep
+
+# Certificates/secrets
+certs/*
+!certs/.gitkeep
+config/geoip/GeoIP.conf
+
+# Backup output
+backups/*
+!backups/.gitkeep

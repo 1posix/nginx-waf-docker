@@ -1,0 +1,11 @@
+# Replace /opt/nginx-waf with the actual repository path.
+/opt/nginx-waf/logs/modsecurity/audit.log {
+    daily
+    rotate 14
+    size 100M
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}
